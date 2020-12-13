@@ -20,10 +20,7 @@ public class Author {
 
     @Column
     private String surname;
-    @ManyToMany
-    @JoinTable(name = "libraryJoin", joinColumns = {@JoinColumn(name = "author_id")}, inverseJoinColumns = {@JoinColumn(name = "book_id")})
 
-    List<Book> bookList = new ArrayList<>();
 
     @Override
     public String toString() {

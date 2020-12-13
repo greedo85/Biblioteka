@@ -24,8 +24,12 @@ public class Book {
     @Column
     private int amount;
 
-    @ManyToMany(mappedBy = "bookList")
-    List<Author>authorList=new ArrayList<>();
+   /* @Column(name="author_id")
+    private int authorId;*/
+
+    @ManyToOne
+    @JoinColumn(name = "author_id", referencedColumnName = "id")
+    Author author;
 
     @Override
     public String toString() {
@@ -33,6 +37,8 @@ public class Book {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", amount=" + amount +
+                ", authorList=" + author +
                 '}';
     }
+
 }
