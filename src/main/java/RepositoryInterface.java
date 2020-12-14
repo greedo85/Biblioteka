@@ -6,5 +6,7 @@ public interface RepositoryInterface<T> {
     T getById( int id);
     T getByString(String text);
     void remove(int id);
+    List getAll();
+    void update(T t);
 
 }

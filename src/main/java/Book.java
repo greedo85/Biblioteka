@@ -31,6 +31,19 @@ public class Book {
     @JoinColumn(name = "author_id", referencedColumnName = "id")
     Author author;
 
+    public Book( String title, int amount, Author author ) {
+        this.title = title;
+        this.amount = amount;
+        this.author = author;
+    }
+
+    public Book( int id, String title, int amount, Author author ) {
+        this.id = id;
+        this.title = title;
+        this.amount = amount;
+        this.author = author;
+    }
+
     @Override
     public String toString() {
         return "Book{" +
